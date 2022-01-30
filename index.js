@@ -1,6 +1,7 @@
 /**
  * Module Imports
  */
+const keepAlive = require('./server')
 const { Client, Collection } = require("discord.js");
 const { readdirSync } = require("fs");
 const { join } = require("path");
@@ -12,6 +13,7 @@ const client = new Client({
   restTimeOffset: 0
 });
 
+keepAlive()
 client.login(TOKEN);
 client.commands = new Collection();
 client.prefix = PREFIX;
